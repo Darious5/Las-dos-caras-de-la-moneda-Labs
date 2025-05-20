@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Vulnerable</title>
+</head>
+<body>
+    <h2>Iniciar Sesión (Demo SQL Injection)</h2>
+    <form action="login_seguro.php" method="POST">
+        <label>Usuario:</label>
+        <input type="text" name="username" placeholder="Ej: admin" required><br>
+
+        <label>Contraseña:</label>
+        <input type="password" name="password" placeholder="Ej: pass123" required><br>
+
+        <button type="submit" name="submit">Ingresar</button>
+    </form>
+</body>
+</html>
