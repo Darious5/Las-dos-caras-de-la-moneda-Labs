@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Encriptado</title>
+</head>
+<body>
+    <h2>Iniciar Sesión (Demo Encriptado)</h2>
+    <form action="login_encriptado_fuerte.php" method="POST" onsubmit="return validarFormulario()">
+        <label>Usuario:</label>
+        <input type="text" name="username" placeholder="Ej: admin" required><br>
+
+        <label>Contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="Ej: Pass123@" required><br>
+
+        <button type="submit" name="submit">Ingresar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            const password = document.getElementById("password").value;
+            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+            if (!regex.test(password)) {
+                alert("La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
